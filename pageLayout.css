@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  width: 99.85vw;
+  height: 99vh;
+}
+.menuBar {
+  width: 100%;
+  height: 5%;
+  border: 1px solid greenyellow;
+  background-color: black;
+}
+.layout {
+  width: 100%;
+  height: 95%;
+  border: 1px solid greenyellow;
+  display: flex;
+  flex-direction: row;
+}
+.toolkit {
+  height: 100%;
+  width: 18%;
+  border: 1px solid black;
+  background-color: black;
+}
+.workspace {
+  height: 100%;
+  width: 62%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.breadboard {
+  min-height: 54%;
+  width: 100%;
+  flex-direction: column;
+  align-content: space-between;
+  background-color: rgba(224, 236, 178, 0.3);
+  position: relative;
+}
+.tabContainer {
+  width: 100%;
+  height: 46%;
+  background-color: rgb(20, 20, 20);
+}
+.debugging {
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
+  background-color: black;
+}

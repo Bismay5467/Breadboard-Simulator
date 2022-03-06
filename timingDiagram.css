@@ -1,0 +1,19 @@
+.timingDiagram {
+  width: 100%;
+  height: 90%;
+
+  display: none;
+  position: relative;
+}
+
+.timingDiagram p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: white;
+  word-spacing: 2px;
+  letter-spacing: 1.2px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
