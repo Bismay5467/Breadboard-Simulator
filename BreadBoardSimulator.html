@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pageLayout.css">
+    <link rel="stylesheet" href="breadboard.css">
+    <link rel="stylesheet" href="chip.css">
+    <link rel="stylesheet" href="errorLog.css">
+    <link rel="stylesheet" href="tabContainer.css">
+    <link rel="stylesheet" href="timingDiagram.css">
+    <link rel="stylesheet" href="powerSupply.css">
+    <link rel="stylesheet" href="toolkit.css">
+    <link rel="stylesheet" href="menuBar.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    
+
+<body>
+    <div class="menuBar">
+        <button type="button" class="menu-btn"><i class="fa fa-file-o icon-menu" aria-hidden="true"></i>
+            Open</button>
+        <button type="button" class="menu-btn"><i class="fa fa-floppy-o icon-menu" aria-hidden="true"></i>
+            Save Circuit</button>
+        <button type="button" class="menu-btn"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+            About</button>
+        <button type="button" class="menu-btn">Breadboard Simulator</button>
+        <button type="button" class="menu-btn"><i class="fa fa-envelope-o icon-menu" aria-hidden="true"></i>
+            Contact Us</button>
+    </div>
+
+    <div class="layout">
+
+        <div class="toolkit">
+            <!-- <div style="height: 40%; width: 100%;"> -->
+            <button type="button" class="btn" data-toggle="collapse"><i class="fa fa-caret-down" aria-hidden="true"
+                    style="padding-right: 5%;" id="basicGates"></i>Basic Gates</button>
+            <div class="basicGates">
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="andGate" draggable="true">74LS08</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>And Gate</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="orGate" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Or Gate</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="notGate" draggable="true">74LS04</div>
+                    </div>
+                    <div class="aboutChip">1 Input<br>Not Gate</div>
+                </div>
+            </div>
+            <!-- <div style="width: 100%; height: 30%;"> -->
+            <button type="button" class="btn" data-toggle="collapse" id="UniversalGates" onclick = "collapse('UniversalGates', '23.7%')"><i class="fa fa-caret-down" aria-hidden="true"
+                    style="padding-right: 5%;"></i>Universal
+                Gates</button>
+            <div class="UniversalGates">
+                <div class="Gates" style="height: 50%;">
+                    <div class="OriginalChip">
+                        <div id="nandGate" draggable="true">74LS02</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Nand Gate</div>
+                </div>
+                <div class="Gates" style="height: 50%;">
+                    <div class="OriginalChip">
+                        <div id="norGate" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Nor Gate</div>
+                </div>
+            </div>
+            <!-- <div style="width: 100%; height: 40%;"> -->
+            <button type="button" class="btn" data-toggle="collapse" id="complexGates" onclick = "collapse('complexGates', '34.7%')"><i class="fa fa-caret-down" aria-hidden="true"
+                    style="padding-right: 5%;"></i>Complex
+                Gates</button>
+            <div class="complexGates">
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="xorGate" draggable="true">74LS02</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Xor Gate</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="encoder" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Encoder</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="decoder" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">2 Input<br>Decoder</div>
+                </div>
+            </div>
+            <!-- <div style="width: 100%; height: 40%;"> -->
+            <button type="button" class="btn" data-toggle="collapse" id="flipFlops" onclick = "collapse('flipFlops', '34.7%')"><i class="fa fa-caret-down" aria-hidden="true"
+                    style="padding-right: 5%;"></i>Flip Flops</button>
+            <div class="flipFlops">
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="clock" draggable="true">74LS02</div>
+                    </div>
+                    <div class="aboutChip">Debouncing<br>Clock</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="dFlipFlop" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">D<br>Flip Flop</div>
+                </div>
+                <div class="Gates">
+                    <div class="OriginalChip">
+                        <div id="jkFlipFlop" draggable="true">74LS32</div>
+                    </div>
+                    <div class="aboutChip">J K<br>Flip Flop</div>
+                </div>
+            </div>
+            <button type="button" class="btn" data-toggle="collapse"><i class="fa fa-caret-down" aria-hidden="true"
+                    style="padding-right: 5%;" id="Miscellaneous"></i>Miscellaneous</button>
+        </div>
+
+        <div class="workspace">
+            <div class="breadboard">
+                <svg id="wires"></svg>
+                <div id="upperPowerSupply" style="border-bottom: 2px solid red;"></div>
+                <div id="body">
+                    <div id="upperHalf"></div>
+                    <div id="chipBox">
+                        <div class="chip" style="margin-left: 7%; height: 100%; font-size: 0.9em;" id = "place1" onclick = "removeChip('place1')"></div>
+                        <div class="chip" style="margin-left: 7%; margin-right: 5.2%; width:9.7%; height: 100%; font-size: 0.9em;" id = "place2" onclick = "removeChip('place2')"></div>
+                        <div class="chip" style="margin-left: 6%; margin-right: 5.6%; height: 100%; font-size: 0.9em;" id = "place3" onclick = "removeChip('place3')"></div>
+                        <div class="chip" style="margin-left: 7%; height: 100%; font-size: 0.9em;" id = "place4" onclick = "removeChip('place4')"></div>
+                    </div>
+                    <div id="lowerHalf"></div>
+                </div>
+
+                <div id="lowerPowerSupply" style="border-top: 2px solid blue;"></div>
+            </div>
+            <div class="tabContainer">
+                <div class="tab">
+                    <button type="button" class="tabButton">Error Log</button>
+                    <button type="button" class="tabButton">Timing Diagram</button>
+                </div>
+                <div class="errorLog">
+
+                </div>
+                <div class="timingDiagram">
+                    <p>No timing diagram available for this circuit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="debugging">
+            <!-- <div class="powerSupply">
+                <div class="outerCircle positive">
+                    <div class="innerCircle port"></div>
+                </div>
+                <div class="outerCircle negative">
+                    <div class="innerCircle port"></div>
+                </div>
+                <div class="indicator"></div>
+                <div class="onOffSwitch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </div>
+                <div class="text" style="font-size: 20px; position: absolute;top: 30%;">DC Power Supply</div>
+                <div class="text" style="position: absolute;top: 39%">Kungber</div>
+                <div class="display">
+                    <div class="voltage">
+                        <div class="value text" style = "color: rgb(151, 3, 3); font-family: 'Cairo', sans-serif;">30.00</div>
+                        <div class="quantity text" style = "color: rgb(151, 3, 3); font-family: 'Cairo', sans-serif;">V</div>
+                    </div>
+                    <div class="current">
+                        <div class="value text" style = "color: rgb(128, 3, 3); font-family: 'Cairo', sans-serif;">10.00</div>
+                        <div class="quantity text" style = "color: rgb(128, 3, 3); font-family: 'Cairo', sans-serif;">A</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="multimeter"></div>
+    </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="breadboard.js"></script>
+<script type="text/javascript" src="wire1.js"></script>
+<script type="text/javascript" src="errLog.js"></script>
+<script type="text/javascript" src="toolkit.js"></script>
+<script type="text/javascript" src="chipPlacement.js"></script>
+
+</html>

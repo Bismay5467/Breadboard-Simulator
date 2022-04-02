@@ -1,0 +1,53 @@
+.errorLog {
+  width: 99.9%;
+  height: 90%;
+  border-right: 1px solid black;
+  background-color: rgb(7, 6, 6);
+  display: block;
+
+  position: relative;
+
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.errorLog::-webkit-scrollbar {
+  width: 0.8em;
+}
+.errorLog::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.errorLog::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(315deg, #1d251e 0%, #233024 74%);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+
+.errorLog p {
+  width: 100%;
+  height: 0;
+  background: rgba(8,9,8,255);
+  background-image: linear-gradient(to left, #000000, #0A2F03, #070707);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+
+  color: #0acb0e;
+  font-size: 18px;
+  padding: 1%;
+  margin: 0;
+  overflow: hidden;
+  word-spacing: 2px;
+  letter-spacing: 1.2px;
+  font-family: "IBM Plex Sans", sans-serif;
+
+  user-select: none;
+}
+.errorLog p.show {
+  height: 8%;
+}
+.errorLog p {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+.errorLog p.show {
+  opacity: 1;
+}
