@@ -1,11 +1,11 @@
 const S_UPPER_POWER_SUPPLY = 1;
-const E_UPPER_POWER_SUPPLY = 146;
-const S_LOWER_POWER_SUPPLY = 147;
-const E_LOWER_POWER_SUPPLY = 292;
-const S_UPPER_HALF = 293;
-const E_UPPER_HALF = 584;
-const S_LOWER_HALF = 585;
-const E_LOWER_HALF = 876;
+const E_UPPER_POWER_SUPPLY = 148;
+const S_LOWER_POWER_SUPPLY = 149;
+const E_LOWER_POWER_SUPPLY = 296;
+const S_UPPER_HALF = 297;
+const E_UPPER_HALF = 592;
+const S_LOWER_HALF = 593;
+const E_LOWER_HALF = 888;
 
 window.onload = () => {
 

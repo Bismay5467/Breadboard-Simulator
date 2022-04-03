@@ -25,7 +25,7 @@ document.getElementsByClassName('tabButton')[1].addEventListener('click', () => 
 
 document.getElementById('body').addEventListener('click', () => {
     // errorMessage(ERROR_MESSAGE[Math.floor(Math.random() * ERROR_MESSAGE.length)]);
-    errorMessage(ERROR_MESSAGE[0]);
+    // errorMessage(ERROR_MESSAGE[0]);
 });
 
 function errorMessage(errorMessage) {
