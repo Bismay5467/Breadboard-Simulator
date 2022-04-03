@@ -43,7 +43,7 @@ document.getElementById('jkFlipFlop').addEventListener('dragstart', (e) => {
 });
 
 
-
+let chipPlaceHolder = {place1:null, place2:null, place3:null, place4:null};
 
 const chips = document.getElementsByClassName('chip');
 
@@ -65,21 +65,29 @@ function drop(e) {
     const nodeCopy = document.getElementById(id).cloneNode(true);
     /*chipPlaceHolder[e.target.id] = gateNo;*/
 
-    console.log(e.target.style.cssText);   
+    //console.log(e.target.style.cssText);   
 
     if(e.target.classList.length === 1){
+
         e.target.appendChild(nodeCopy);
+        chipPlaceHolder[e.target.id] = id;
+
         nodeCopy.style.width = '100%';
         nodeCopy.style.height = '100%';
         nodeCopy.style.borderRadius = '0.3em';
     } 
-    console.log(e.target); 
+    //console.log(chipPlaceHolder); 
 }
 
 const removeChip = (chipPlaceholderId) => {
 
-    let chipPlaceholder = document.getElementById(chipPlaceholderId);
+    let chipPlaceholderElement = document.getElementById(chipPlaceholderId);
+    
 
-    while (chipPlaceholder.firstChild)
-        chipPlaceholder.removeChild(chipPlaceholder.firstChild);
+    while (chipPlaceholderElement.firstChild)
+    {
+        chipPlaceHolder[chipPlaceholderElement.id] =  null;
+        chipPlaceholderElement.removeChild(chipPlaceholderElement.firstChild);
+    }
+
 }
