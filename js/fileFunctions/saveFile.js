@@ -9,4 +9,6 @@ const saveFile = () => {
 
   downloadFile.click();
   downloadFile.remove();
+
+  console.log("some commit");
 };
