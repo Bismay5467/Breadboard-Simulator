@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="pageLayout.css">
-    <link rel="stylesheet" href="breadboard.css">
-    <link rel="stylesheet" href="chip.css">
-    <link rel="stylesheet" href="errorLog.css">
-    <link rel="stylesheet" href="tabContainer.css">
-    <link rel="stylesheet" href="timingDiagram.css">
-    <link rel="stylesheet" href="powerSupply.css">
-    <link rel="stylesheet" href="toolkit.css">
-    <link rel="stylesheet" href="menuBar.css">
+    <link rel="stylesheet" href="css/pageLayout.css">
+    <link rel="stylesheet" href="css/breadboard.css">
+    <link rel="stylesheet" href="css/chip.css">
+    <link rel="stylesheet" href="css/errorLog.css">
+    <link rel="stylesheet" href="css/tabContainer.css">
+    <link rel="stylesheet" href="css/timingDiagram.css">
+    <link rel="stylesheet" href="css/powerSupply.css">
+    <link rel="stylesheet" href="css/toolkit.css">
+    <link rel="stylesheet" href="css/menuBar.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
@@ -27,9 +27,10 @@
 
 <body>
     <div class="menuBar">
-        <button type="button" class="menu-btn"><i class="fa fa-file-o icon-menu" aria-hidden="true"></i>
+        <input style="display: none;" type="file" name="breabboardfile" id="open-file-input">
+        <button type="button" class="menu-btn" id="open-file" onclick="openFile()"><i class="fa fa-file-o icon-menu" aria-hidden="true"></i>
             Open</button>
-        <button type="button" class="menu-btn"><i class="fa fa-floppy-o icon-menu" aria-hidden="true"></i>
+        <button type="button" class="menu-btn" id="save-file" onclick="saveFile()"><i class="fa fa-floppy-o icon-menu" aria-hidden="true"></i>
             Save Circuit</button>
         <button type="button" class="menu-btn"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
             About</button>
@@ -196,10 +197,13 @@
     </div>
 
 </body>
-<script type="text/javascript" src="breadboard.js"></script>
-<script type="text/javascript" src="wire1.js"></script>
-<script type="text/javascript" src="errLog.js"></script>
-<script type="text/javascript" src="toolkit.js"></script>
-<script type="text/javascript" src="chipPlacement.js"></script>
+<script type="text/javascript" src="js/breadboard.js"></script>
+<script type="text/javascript" src="js/wire1.js"></script>
+<script type="text/javascript" src="js/errLog.js"></script>
+<script type="text/javascript" src="js/toolkit.js"></script>
+<script type="text/javascript" src="js/chipPlacement.js"></script>
+<script type="text/javascript" src="js/fileFunctions/saveFile.js"></script>
+<script type="text/javascript" src="js/fileFunctions/openFile.js"></script>
+
 
 </html>
