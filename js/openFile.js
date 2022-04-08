@@ -26,7 +26,7 @@ const readFile = (e) => {
           "http://www.w3.org/2000/svg",
           "path"
         );
-        wireColor = wireColors[Math.floor(Math.random() * wireColors.length)];
+        const wireColor = WIRE_COLORS[Math.floor(Math.random() * WIRE_COLORS.length)];
 
         newWire.style.stroke = wireColor;
         newWire.style.strokeWidth = "4";
