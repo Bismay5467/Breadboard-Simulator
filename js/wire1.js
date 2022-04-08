@@ -6,8 +6,8 @@ let wireColor;
 let wireConnection = new Array(1021).fill(null);
 let wireStartTerminal;
 
-let positivePowerSupply = [[75, 148], [223, 296]];
-let negativePowerSupply = [[1, 74], [149, 222]];
+let positivePowerSupply = [[1, 74], [223, 296]];
+let negativePowerSupply = [[75, 148], [149, 222]];
 
 for(let i = 0; i < wireConnection.length; i++) wireConnection[i] = new Array(2).fill(null);
 
