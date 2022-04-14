@@ -23,7 +23,9 @@ window.onload = () => {
 
     for(id = S_UPPER_POWER_SUPPLY; id <= E_LOWER_HALF; id++)
         document.getElementById(id).addEventListener('click', drawWires);
-        // document.getElementById(id).addEventListener('click', drawWires);
+    
+    document.getElementById("power").addEventListener('click', powersupply);
+    //console.log(wirePoints);
 
     /*for first placeholder:
     296 305 367 378 441 451 515 524 588 597 953 962 880 889 807 816 734 743 661 670*/

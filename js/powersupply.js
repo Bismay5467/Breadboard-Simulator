@@ -1,5 +1,4 @@
 const arrayBody = new Array(8).fill(null);
-const wirePoints = new Array(2).fill(null);
 for(let i = 0;i<arrayBody.length;i++){
     arrayBody[i] = new Array(74).fill(null);
 }
@@ -7,13 +6,18 @@ const uPositivePowerEnd = Math.round(E_UPPER_POWER_SUPPLY/2);
 const lNegativePowerEnd = Math.floor((S_LOWER_POWER_SUPPLY + E_LOWER_POWER_SUPPLY)/2);
 const lPositivePowerStart = lNegativePowerEnd + 1;
 const uNegativePowerStart = uPositivePowerEnd + 1;
-const powersupply = () => {
+function powersupply(){
+    const wirePoints = new Array(2).fill(null);
     for(let j=0;j<1021;j++){
+        if(wireConnection[j][1] === null || (wireConnection[j][1] >= 1 && wireConnection[j][1] <=296)){
+            continue;
+        }
         wirePoints[0] = j+1;
-        wirePoints[1] = wireConnection[j][1];
+        wirePoints[1] = parseInt(wireConnection[j][1]);
+        console.log(wirePoints);
         let arrayRow1 = Math.floor((wirePoints[1]-297)/74);
         let arrayColumn1 = (wirePoints[1]-297)%74;
-        if((arrayBody[arrayRow1][arrayColumn1] == null) || (arrayBody[arrayRow1][arrayColumn1] == 1)){
+        if((arrayBody[arrayRow1][arrayColumn1] === null) || (arrayBody[arrayRow1][arrayColumn1] === 1)){
 
             if((wirePoints[0] >=S_UPPER_POWER_SUPPLY && wirePoints[0] <= uPositivePowerEnd) || (wirePoints[0] >= lPositivePowerStart && wirePoints[0] <= E_LOWER_POWER_SUPPLY)){
                 if(wirePoints[1] >= S_UPPER_HALF && wirePoints[1] <= E_UPPER_HALF){
