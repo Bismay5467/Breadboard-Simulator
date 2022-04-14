@@ -7,59 +7,77 @@ const lNegativePowerEnd = Math.floor((S_LOWER_POWER_SUPPLY + E_LOWER_POWER_SUPPL
 const lPositivePowerStart = lNegativePowerEnd + 1;
 const uNegativePowerStart = uPositivePowerEnd + 1;
 function powersupply(){
-    const wirePoints = new Array(2).fill(null);
+    let wirePoint1,wirePoint2,row1,row2,column1,column2;
     for(let j=0;j<1021;j++){
         if(wireConnection[j][1] === null || (wireConnection[j][1] >= 1 && wireConnection[j][1] <=296)){
             continue;
         }
-        wirePoints[0] = j+1;
-        wirePoints[1] = parseInt(wireConnection[j][1]);
-        console.log(wirePoints);
-        let arrayRow1 = Math.floor((wirePoints[1]-297)/74);
-        let arrayColumn1 = (wirePoints[1]-297)%74;
-        if((arrayBody[arrayRow1][arrayColumn1] === null) || (arrayBody[arrayRow1][arrayColumn1] === 1)){
+        wirePoint1 = j+1;
+        wirePoint2 = parseInt(wireConnection[j][1]);
+        console.log(wirePoint1);
+        console.log(wirePoint2);
+       // row1 = Math.floor((wirePoint1-297)/74);
+       // column1 = (wirePoint1-297)%74;
+        row2 = Math.floor((wirePoint2-297)/74);
+        column2 = (wirePoint2-297)%74;
+       // if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1))
+        if(wirePoint1 >= 1 && wirePoint1 <= 296){
+            if((arrayBody[row2][column2] === null) || (arrayBody[row2][column2] === 1)){
 
-            if((wirePoints[0] >=S_UPPER_POWER_SUPPLY && wirePoints[0] <= uPositivePowerEnd) || (wirePoints[0] >= lPositivePowerStart && wirePoints[0] <= E_LOWER_POWER_SUPPLY)){
-                if(wirePoints[1] >= S_UPPER_HALF && wirePoints[1] <= E_UPPER_HALF){
-                    for(let i=0;i<4;i++){
-                        arrayBody[i][arrayColumn1] = 1;
+                if((wirePoint1 >=S_UPPER_POWER_SUPPLY && wirePoint1 <= uPositivePowerEnd) || (wirePoint1 >= lPositivePowerStart && wirePoint1 <= E_LOWER_POWER_SUPPLY)){
+                    if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+                        for(let i=0;i<4;i++){
+                            arrayBody[i][column2] = 1;
+                        }
+                    }
+                    else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                        for(let i=4;i<8;i++){
+                            arrayBody[i][column2] = 1;
+                        }
                     }
                 }
-                else if(wirePoints[1] >= S_LOWER_HALF && wirePoints[1] <= E_LOWER_HALF){
-                    for(let i=4;i<8;i++){
-                        arrayBody[i][arrayColumn1] = 1;
+                else if((wirePoint1 >=uNegativePowerStart && wirePoint1 <= E_UPPER_POWER_SUPPLY) || (wirePoint1 >=S_LOWER_POWER_SUPPLY && wirePoint1 <= lNegativePowerEnd)){
+                    if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+                        for(let i=0;i<4;i++){
+                            arrayBody[i][column2] = 0;
+                        }
+                    }
+                    else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                        for(let i=4;i<8;i++){
+                            arrayBody[i][column2] = 0;
+                        }
                     }
                 }
-            }
-            else if((wirePoints[0] >=uNegativePowerStart && wirePoints[0] <= E_UPPER_POWER_SUPPLY) || (wirePoints[0] >=S_LOWER_POWER_SUPPLY && wirePoints[0] <= lNegativePowerEnd)){
-                if(wirePoints[1] >= S_UPPER_HALF && wirePoints[1] <= E_UPPER_HALF){
-                    for(let i=0;i<4;i++){
-                        arrayBody[i][arrayColumn1] = 0;
-                    }
-                }
-                else if(wirePoints[1] >= S_LOWER_HALF && wirePoints[1] <= E_LOWER_HALF){
-                    for(let i=4;i<8;i++){
-                        arrayBody[i][arrayColumn1] = 0;
-                    }
-                }
-            }
-            else if((wirePoints[0] >= S_UPPER_HALF && wirePoints[0] <= E_LOWER_HALF)){
-                let arrayRow2 = Math.floor((wirePoints[0]-293)/73);
-                let arrayColumn2 = (wirePoints[0]-293)%73;
-                if(wirePoints[1] >= S_UPPER_HALF && wirePoints[1] <= E_UPPER_HALF){
-                    for(let i=0;i<4;i++){
-                        arrayBody[i][arrayColumn1] = arrayBody[arrayRow2][arrayColumn2];
-                    }
-                }
-                else if(wirePoints[1] >= S_LOWER_HALF && wirePoints[1] <= E_LOWER_HALF){
-                    for(let i=4;i<8;i++){
-                        arrayBody[i][arrayColumn1] = arrayBody[arrayRow2][arrayColumn2];
-                    }
-                }
+                
             }
         }
         else{
-            alert("futo already vore ache");
+            row1 = Math.floor((wirePoint1-297)/74);
+            column1 = (wirePoint1-297)%74;
+            if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1)){
+                if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+                    for(let i=0;i<4;i++){
+                        arrayBody[i][column2] = arrayBody[row1][column1];
+                    }
+                }
+                else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                    for(let i=4;i<8;i++){
+                        arrayBody[i][column2] = arrayBody[row1][column1];
+                    }
+                }
+            }
+            else if(arrayBody[row2][column2] != null && (arrayBody[row1][column1] == null || arrayBody[row1][column1] == 1)){
+                if(wirePoint1 >= S_UPPER_HALF && wirePoint1 <= E_UPPER_HALF){
+                    for(let i=0;i<4;i++){
+                        arrayBody[i][column1] = arrayBody[row2][column2];
+                    }
+                }
+                else if(wirePoint1 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                    for(let i=4;i<8;i++){
+                        arrayBody[i][column1] = arrayBody[row2][column2];
+                    }
+                }
+            }
         }
     }
     console.log(arrayBody);
