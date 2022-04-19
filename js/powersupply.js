@@ -1,12 +1,15 @@
 const arrayBody = new Array(8).fill(null);
 for(let i = 0;i<arrayBody.length;i++){
-    arrayBody[i] = new Array(74).fill(null);
+    arrayBody[i] = new Array(74);
 }
 const uPositivePowerEnd = Math.round(E_UPPER_POWER_SUPPLY/2);
 const lNegativePowerEnd = Math.floor((S_LOWER_POWER_SUPPLY + E_LOWER_POWER_SUPPLY)/2);
 const lPositivePowerStart = lNegativePowerEnd + 1;
 const uNegativePowerStart = uPositivePowerEnd + 1;
 function powersupply(){
+    for(let i = 0;i<arrayBody.length;i++){
+        arrayBody[i].fill(null);
+    }   
     let wirePoint1,wirePoint2,row1,row2,column1,column2;
     for(let j=0;j<1021;j++){
         if(wireConnection[j][1] === null || (wireConnection[j][1] >= 1 && wireConnection[j][1] <=296)){
@@ -79,6 +82,48 @@ function powersupply(){
                 }
             }
         }
+    }
+    let vccRow = 3, vccColumn = 4;
+    let gndRow = 4, gndColumn = 10;
+    for(var place in chipPlaceHolder){
+        if(chipPlaceHolder[place] == null){
+            vccColumn = vccColumn + 16;
+            gndColumn = gndColumn + 16;
+            continue;
+        }
+        switch(chipPlaceHolder[place]){
+            case "andGate" :
+                andGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+            case "orGate" :
+                orGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+            case "notGate" :
+                notGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+            case "nandGate" :
+                nandGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+            case "norGate" :
+                norGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+            case "xorGate" :
+                xorGate(vccRow,vccColumn,gndRow,gndColumn,vccColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 16;
+                break;
+        }
+        
     }
     console.log(arrayBody);
    /* if(chipPlaceHolder["place1"]=="andGate"){
