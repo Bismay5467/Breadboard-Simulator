@@ -1,4 +1,5 @@
 let openDivClassName = "NONE";
+let wireColor = '#0acb0e';
 
 const collapse = (className, maxHeight) => {
     let element = document.getElementsByClassName(className)[0];
@@ -20,4 +21,9 @@ const collapse = (className, maxHeight) => {
         openDivClassName = className;
     }
 }
+
+document.getElementById('colorPicker').addEventListener('input', () => {
+    document.getElementsByClassName('bi-eyedropper')[0].style.color = document.getElementById('colorPicker').value;
+    wireColor = document.getElementById('colorPicker').value;
+});
 

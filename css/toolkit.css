@@ -72,6 +72,7 @@
   align-items: center;
   letter-spacing: 2px;
   color: #0acb0e;
+  /* border: 1px solid white; */
 }
 
 #andGate,
@@ -99,10 +100,22 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.UniversalGates,
+
 .complexGates,
 .flipFlops {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-in-out;
+}
+
+a, a:visited, a:active {
+  color: #0acb0e;
+}
+
+#colorPicker {
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }

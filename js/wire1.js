@@ -1,8 +1,6 @@
 let drawingState = "IDLE";
 let wireCount = 1;
 let start_X, start_Y;
-const WIRE_COLORS = ['red', 'blue', 'green'];
-let wireColor;
 let wireConnection = new Array(1021).fill(null);
 let wireStartTerminal;
 
@@ -48,7 +46,7 @@ const startDrawing = (x, y, divId) => {
     drawingState = "DRAWING";
 
     /*choosing a color for wire*/
-    wireColor = WIRE_COLORS[Math.floor(Math.random() * WIRE_COLORS.length)];
+    // wireColor = WIRE_COLORS[Math.floor(Math.random() * WIRE_COLORS.length)];
 
     /*changing color of starting node*/
     document.getElementById(divId).style.background = wireColor;

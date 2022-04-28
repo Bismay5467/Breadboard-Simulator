@@ -1,6 +1,7 @@
 const ERROR_MESSAGE = [
     'Output pins cannot acccept inputs.',
-    'The starting and ending terminal of the wire cannot be at the power supply at the same time.'
+    'The starting and ending terminal of the wire cannot be at the power supply at the same time.',
+    'Simulation failed. Try turning on the power button first.'
 ];
 
 document.getElementsByClassName('tabButton')[0].addEventListener('click', () => {
