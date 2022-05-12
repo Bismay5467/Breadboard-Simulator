@@ -116,3 +116,22 @@ document.getElementById('400K').addEventListener('click', () => {
 
     workingButtonInterface(button);
 });
+
+
+const displayVoltage = (divId) => {
+
+    const multimeterDisplay = document.getElementById('multimeter-display');
+
+    if(!powerOn) return;
+
+    row = Math.floor((divId-297)/74);
+    column = (divId-297)%74;
+
+    if(arrayBody[row][column] == null) multimeterDisplay.innerHTML = `1.00`;
+    else if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])*2).toFixed(2)}`
+    else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+4).toFixed(2)}`
+
+
+
+
+}

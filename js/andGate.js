@@ -21,7 +21,7 @@ function andGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             }
             count++;
         }
-        startCol = startCol - 4;
+        startCol = startCol - 5;
         console.log(startCol);
         while(count != 4){
             if(arrayBody[3][startCol]==1 && arrayBody[3][startCol+1]==1){

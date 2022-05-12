@@ -33,6 +33,9 @@ document.getElementById('simulate').addEventListener('click', () => {
         errorMessage(ERROR_MESSAGE[2]);
         return;
     }
+    else {
+        powersupply();
+    }
 });
 
 
