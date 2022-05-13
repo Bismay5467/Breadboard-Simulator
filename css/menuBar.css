@@ -52,3 +52,28 @@
 }
 
 
+.about {
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  width: 60.5%;
+  height: 990%;
+  background: rgba(20, 40, 20, 0.9);
+  margin: 0 auto;
+  z-index: 9999;
+  padding-left: 2.5%;
+  padding-top: 1%;
+  display: none;
+
+
+  position: relative;
+  top: 5%;
+  left: -0.7%;
+
+  color: rgb(220, 217, 248);
+  font-size: 1em;
+  letter-spacing: 2px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+

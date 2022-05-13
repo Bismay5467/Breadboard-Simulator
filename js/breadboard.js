@@ -17,10 +17,10 @@ window.onload = () => {
     
     for(let id = S_UPPER_HALF; id <= E_UPPER_HALF; id++)
         document.getElementById('upperHalf').innerHTML += `<div id = "${id}" class = "holes" style = "background: black" 
-        onmouseover = "displayVoltage(${id})"></div>`;
+        onmouseover = "displayMultimeterValue(${id})"></div>`;
 
     for(let id = S_LOWER_HALF; id <= E_LOWER_HALF; id++)
-        document.getElementById('lowerHalf').innerHTML += `<div id = "${id}" class = "holes" style = "background: black" onmouseover = "displayVoltage(${id})"></div>`;
+        document.getElementById('lowerHalf').innerHTML += `<div id = "${id}" class = "holes" style = "background: black" onmouseover = "displayMultimeterValue(${id})"></div>`;
 
     for(id = S_UPPER_POWER_SUPPLY; id <= E_LOWER_HALF; id++)
         document.getElementById(id).addEventListener('click', drawWires);

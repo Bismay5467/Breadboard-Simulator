@@ -10,6 +10,7 @@ document.getElementsByClassName('btn-3')[0].addEventListener('click', () => {
     {
         if(workingButton != 'NONE') workingButton.classList.toggle('pressed');
         workingButton = 'NONE';
+
         powerButton.innerHTML = `<i class="fa fa-power-off" aria-hidden="true"></i><br>ON`;
         multimeterOn = false;
         multimeterDisplay.innerHTML = '';
@@ -27,6 +28,9 @@ document.getElementsByClassName('btn-3')[0].addEventListener('click', () => {
 });
 
 const workingButtonInterface = (button) => {
+    
+    const multimeterDisplay = document.getElementById('multimeter-display');
+    multimeterDisplay.innerHTML = `0.00`;
 
     if(workingButton != 'NONE' && (workingButton.id == button.id)) workingButton = 'NONE';
     else {
@@ -118,20 +122,33 @@ document.getElementById('400K').addEventListener('click', () => {
 });
 
 
-const displayVoltage = (divId) => {
+const displayMultimeterValue = (divId) => {
 
     const multimeterDisplay = document.getElementById('multimeter-display');
 
-    if(!powerOn) return;
+    if(!powerOn || !multimeterOn) return;
 
     row = Math.floor((divId-297)/74);
     column = (divId-297)%74;
 
-    if(arrayBody[row][column] == null) multimeterDisplay.innerHTML = `1.00`;
-    else if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])*2).toFixed(2)}`
-    else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+4).toFixed(2)}`
+    if(arrayBody[row][column] == null) {
+        multimeterDisplay.innerHTML = `-0.00`;
+        return;
+    }
+    if(workingButton == 'NONE') {
+        multimeterDisplay.innerHTML = `0.00`;
+        return;
+    }
 
-
-
+    switch(workingButton.id) {
+        case '2DCV': 
+            if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])).toFixed(2)}`
+            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+1).toFixed(2)}`
+            break;
+        case '20DCV': 
+            if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])*2).toFixed(2)}`
+            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+4).toFixed(2)}`
+            break;
+    }
 
 }
