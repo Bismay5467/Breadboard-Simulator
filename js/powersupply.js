@@ -157,10 +157,14 @@ function powersupply(){
         arrayBody[i].fill(null);
     }   
     connectWires();    
- //   connectWires_pichonTheke();    
-//    callChips();
-//    connectWires_soja();    
-//    callChips();
+ //   connectWires_pichonTheke();   
+    for(let i = 0; i < 40; i++) 
+    {
+        callChips();
+        connectWires();    
+        callChips();
+        connectWires();  
+    }
 //    connectWires_soja();
     console.log(arrayBody);
    /* if(chipPlaceHolder["place1"]=="andGate"){

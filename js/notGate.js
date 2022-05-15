@@ -21,7 +21,7 @@ function notGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             }
             count++;
         }
-        startCol = startCol - 4;
+        startCol = startCol - 5;
         while(count != 6){
             if(arrayBody[3][startCol]==0){
                 for(let i=0;i<4;i++){
