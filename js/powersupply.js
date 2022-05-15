@@ -9,94 +9,102 @@ const lNegativePowerEnd = Math.floor((S_LOWER_POWER_SUPPLY + E_LOWER_POWER_SUPPL
 const lPositivePowerStart = lNegativePowerEnd + 1;
 const uNegativePowerStart = uPositivePowerEnd + 1;
 
-function helperFunction(j) {
+function connectWires(){
+    let j = 0;
+    while(j!=1021){
+        let flag = 0;
+        let wirePoint1,wirePoint2,row1,row2,column1,column2;
+        if(wireConnection[j][0] === null){
+            j++;
+            continue;
+        }
+        if(wireConnection[j][1] === null || (wireConnection[j][1] >= 1 && wireConnection[j][1] <=296)){
+            j++;
+            continue;
+        }
+        wirePoint1 = j+1;
+        wirePoint2 = parseInt(wireConnection[j][1]);
+        console.log(wirePoint1);
+        console.log(wirePoint2);
+        row2 = Math.floor((wirePoint2-297)/74);
+        column2 = (wirePoint2-297)%74;
+    // if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1))
+        if(wirePoint1 >= 1 && wirePoint1 <= 296){
+            if((arrayBody[row2][column2] === null) || (arrayBody[row2][column2] === 1)){
 
-    let wirePoint1,wirePoint2,row1,row2,column1,column2;
-    if(wireConnection[j][1] === null || (wireConnection[j][1] >= 1 && wireConnection[j][1] <=296)){
-        return;
-    }
-    wirePoint1 = j+1;
-    wirePoint2 = parseInt(wireConnection[j][1]);
-    console.log(wirePoint1);
-    console.log(wirePoint2);
-   // row1 = Math.floor((wirePoint1-297)/74);
-   // column1 = (wirePoint1-297)%74;
-    row2 = Math.floor((wirePoint2-297)/74);
-    column2 = (wirePoint2-297)%74;
-   // if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1))
-    if(wirePoint1 >= 1 && wirePoint1 <= 296){
-        if((arrayBody[row2][column2] === null) || (arrayBody[row2][column2] === 1)){
-
-            if((wirePoint1 >=S_UPPER_POWER_SUPPLY && wirePoint1 <= uPositivePowerEnd) || (wirePoint1 >= lPositivePowerStart && wirePoint1 <= E_LOWER_POWER_SUPPLY)){
+                if((wirePoint1 >=S_UPPER_POWER_SUPPLY && wirePoint1 <= uPositivePowerEnd) || (wirePoint1 >= lPositivePowerStart && wirePoint1 <= E_LOWER_POWER_SUPPLY)){
+                    if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+                        for(let i=0;i<4;i++){
+                            arrayBody[i][column2] = 1;
+                        }
+                    }
+                    else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                        for(let i=4;i<8;i++){
+                            arrayBody[i][column2] = 1;
+                        }
+                    }
+                }
+                else if((wirePoint1 >=uNegativePowerStart && wirePoint1 <= E_UPPER_POWER_SUPPLY) || (wirePoint1 >=S_LOWER_POWER_SUPPLY && wirePoint1 <= lNegativePowerEnd)){
+                    if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+                        for(let i=0;i<4;i++){
+                            arrayBody[i][column2] = 0;
+                        }
+                    }
+                    else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                        for(let i=4;i<8;i++){
+                            arrayBody[i][column2] = 0;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+        else{
+            row1 = Math.floor((wirePoint1-297)/74);
+            column1 = (wirePoint1-297)%74;
+            if(arrayBody[row1][column1] === arrayBody[row2][column2]){
+                j++;
+                continue;
+            }
+            if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1)){
                 if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
                     for(let i=0;i<4;i++){
-                        arrayBody[i][column2] = 1;
+                        arrayBody[i][column2] = arrayBody[row1][column1];
                     }
+                    flag = 1;
                 }
                 else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
                     for(let i=4;i<8;i++){
-                        arrayBody[i][column2] = 1;
+                        arrayBody[i][column2] = arrayBody[row1][column1];
                     }
+                    flag = 1;
                 }
             }
-            else if((wirePoint1 >=uNegativePowerStart && wirePoint1 <= E_UPPER_POWER_SUPPLY) || (wirePoint1 >=S_LOWER_POWER_SUPPLY && wirePoint1 <= lNegativePowerEnd)){
-                if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
+            else if(arrayBody[row2][column2] != null && (arrayBody[row1][column1] == null || arrayBody[row1][column1] == 1)){
+                if(wirePoint1 >= S_UPPER_HALF && wirePoint1 <= E_UPPER_HALF){
                     for(let i=0;i<4;i++){
-                        arrayBody[i][column2] = 0;
+                        arrayBody[i][column1] = arrayBody[row2][column2];
                     }
+                    flag = 1;
                 }
-                else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
+                else if(wirePoint1 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
                     for(let i=4;i<8;i++){
-                        arrayBody[i][column2] = 0;
+                        arrayBody[i][column1] = arrayBody[row2][column2];
                     }
-                }
-            }
-            
-        }
-    }
-    else{
-        row1 = Math.floor((wirePoint1-297)/74);
-        column1 = (wirePoint1-297)%74;
-        if(arrayBody[row1][column1] != null && (arrayBody[row2][column2] == null || arrayBody[row2][column2] == 1)){
-            if(wirePoint2 >= S_UPPER_HALF && wirePoint2 <= E_UPPER_HALF){
-                for(let i=0;i<4;i++){
-                    arrayBody[i][column2] = arrayBody[row1][column1];
-                }
-            }
-            else if(wirePoint2 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
-                for(let i=4;i<8;i++){
-                    arrayBody[i][column2] = arrayBody[row1][column1];
+                    flag = 1;
                 }
             }
         }
-        else if(arrayBody[row2][column2] != null && (arrayBody[row1][column1] == null || arrayBody[row1][column1] == 1)){
-            if(wirePoint1 >= S_UPPER_HALF && wirePoint1 <= E_UPPER_HALF){
-                for(let i=0;i<4;i++){
-                    arrayBody[i][column1] = arrayBody[row2][column2];
-                }
-            }
-            else if(wirePoint1 >= S_LOWER_HALF && wirePoint2 <= E_LOWER_HALF){
-                for(let i=4;i<8;i++){
-                    arrayBody[i][column1] = arrayBody[row2][column2];
-                }
-            }
+        if(flag == 1){
+            j = 296;
+        }
+        else{
+            j++;
         }
     }
-
 }
 
-function connectWires_soja(){
-    
-    for(let j=0;j<1021;j++){
-        helperFunction(j)
-    }
-}
-
-function connectWires_pichonTheke() {
-    for(let j=1020;j>=0;j--){
-        helperFunction(j)
-    }
-}
 
 function callChips(){
     let vccRow = 3, vccColumn = 4;
@@ -148,12 +156,12 @@ function powersupply(){
     for(let i = 0;i<arrayBody.length;i++){
         arrayBody[i].fill(null);
     }   
-    connectWires_soja();    
-    connectWires_pichonTheke();    
-    callChips();
-    connectWires_soja();    
-    callChips();
-    connectWires_soja();
+    connectWires();    
+ //   connectWires_pichonTheke();    
+//    callChips();
+//    connectWires_soja();    
+//    callChips();
+//    connectWires_soja();
     console.log(arrayBody);
    /* if(chipPlaceHolder["place1"]=="andGate"){
         andGateLogic("place1");

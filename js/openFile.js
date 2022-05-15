@@ -3,6 +3,8 @@ inputFile.addEventListener("change", (e) => {
   readFile(e);
 });
 
+let WIRE_COLORS = ['red', 'green', 'blue']
+
 const readFile = (e) => {
   var file = e.target.files[0];
   if (!file) return;
