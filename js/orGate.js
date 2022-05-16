@@ -1,3 +1,5 @@
+let isConnectionEstablished = true;
+
 function orGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
     if(arrayBody[vccRow][vccColumn] == 1 && arrayBody[gndRow][gndColumn] == 0){
         let count = 0;

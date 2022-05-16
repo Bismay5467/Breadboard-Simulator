@@ -30,17 +30,17 @@ document.getElementById('decoder').addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
 });
 
-document.getElementById('clock').addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', e.target.id);
-});
+// document.getElementById('clock').addEventListener('dragstart', (e) => {
+//     e.dataTransfer.setData('text/plain', e.target.id);
+// });
 
-document.getElementById('dFlipFlop').addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', e.target.id);
-});
+// document.getElementById('dFlipFlop').addEventListener('dragstart', (e) => {
+//     e.dataTransfer.setData('text/plain', e.target.id);
+// });
 
-document.getElementById('jkFlipFlop').addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', e.target.id);
-});
+// document.getElementById('jkFlipFlop').addEventListener('dragstart', (e) => {
+//     e.dataTransfer.setData('text/plain', e.target.id);
+// });
 
 
 let chipPlaceHolder = {place1:null, place2:null, place3:null, place4:null};
@@ -72,7 +72,9 @@ function drop(e) {
         e.target.appendChild(nodeCopy);
         chipPlaceHolder[e.target.id] = id;
 
-        nodeCopy.style.width = '100%';
+        if(id == 'decoder' || id == 'adder') nodeCopy.style.width = '100%';
+        else nodeCopy.style.width = '90%';
+        
         nodeCopy.style.height = '100%';
         nodeCopy.style.borderRadius = '0.3em';
     } 
