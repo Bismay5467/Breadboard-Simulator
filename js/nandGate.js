@@ -21,7 +21,7 @@ function nandGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             }
             count++;
         }
-        startCol = startCol - 4;
+        startCol = startCol - 5;
         while(count != 4){
             if(arrayBody[3][startCol]==1 && arrayBody[3][startCol+1]==1){
                 for(let i=0;i<4;i++){
