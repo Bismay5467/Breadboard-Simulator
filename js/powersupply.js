@@ -158,10 +158,11 @@ function powersupply(){
     }   
     connectWires();    
  //   connectWires_pichonTheke();   
-    for(let i = 0; i < 40; i++) 
+    for(let i = 0; i < 100; i++) 
     {
         callChips();
-        connectWires();    
+        connectWires();
+
         callChips();
         connectWires();  
     }

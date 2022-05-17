@@ -28,7 +28,7 @@
         integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/segment7" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    
+
 </head>
 
 
@@ -47,20 +47,26 @@
                 style='padding-right: 10px'></i>Contact Us
         </button>
         <div class="about">
-            <i class="bi bi-question-circle-fill" style = "font-size: 1.5em;"><text style="padding-left: 1%; font-style: normal;padding-right: 61%;">Breadboard Simulator</text></i>
-            <i class="bi bi-x-circle-fill" style="font-size: 1.5em; text-align: right; cursor: pointer;" onclick="closeAboutSection()"></i>
+            <i class="bi bi-question-circle-fill" style="font-size: 1.5em;"><text
+                    style="padding-left: 1%; font-style: normal;padding-right: 61%;">Breadboard Simulator</text></i>
+            <i class="bi bi-x-circle-fill" style="font-size: 1.5em; text-align: right; cursor: pointer;"
+                onclick="closeAboutSection()"></i>
             <br><br>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente totam ullam non eveniet exercitationem.
-            Natus dolorem libero placeat illum ut assumenda, sunt similique aliquid esse rem! Repudiandae praesentium
-            facere sunt!
-            <br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae expedita itaque numquam illum
-            magni minus cupiditate voluptatibus dicta error quia, praesentium quisquam, voluptas, dignissimos
-            perspiciatis quibusdam odio dolor veritatis?
-            <br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae expedita itaque numquam illum
-            magni minus cupiditate voluptatibus dicta error quia, praesentium quisquam, voluptas, dignissimos
-            perspiciatis quibusdam odio dolor veritatis?
+            <text style="font-weight: bold;">
+                Breadboard Simulator is a virtual breadboard software developed for our semester project. It has an
+                intuitive user interface that simulates a virtual breadboard and supports a wide range of components
+                commonly used in college-level electronics, including:
+                <br><br>
+                Passives: Resistors (with correct colour bands)
+                <br>
+                Digital ICs: Basic logic Gates, Universal logic gates, Display Decoders and Parallel Adder
+                <br>
+                Outputs: LEDs, 7-segment Displays
+                <br><br>
+                These software provide a really good environment for designing various circuits, where you simply drag
+                and drop the circuit components and then simulate them. Voltages and currents can also be seen by
+                hovering over pins. Furthermore, a circuit can be simply saved in JSON format for future references.
+            </text>
         </div>
     </div>
 
@@ -124,7 +130,7 @@
             <div class="UniversalGates">
                 <div class="Gates" style="height: 50%;">
                     <div class="OriginalChip">
-                        <div id="nandGate" draggable="true">74LS02</div>
+                        <div id="nandGate" draggable="true">74LS00</div>
                     </div>
                     <div class="aboutChip">
                         <text>
@@ -137,14 +143,14 @@
                 </div>
                 <div class="Gates" style="height: 50%;">
                     <div class="OriginalChip">
-                        <div id="norGate" draggable="true">74LS32</div>
+                        <div id="norGate" draggable="true">74LS02</div>
                     </div>
                     <div class="aboutChip">
                         <text>
                             2 Input<a
                                 href="https://drive.google.com/drive/folders/1R6NlV-NOKEWRHP80T8OURcJ4ls1V7inK?usp=sharing"
                                 target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"
-                                    style='padding-left: 22px; cursor: pointer;'></i></a><br>Nand Gate
+                                    style='padding-left: 22px; cursor: pointer;'></i></a><br>Nor Gate
                         </text>
                     </div>
                 </div>
@@ -157,7 +163,7 @@
             <div class="complexGates">
                 <div class="Gates">
                     <div class="OriginalChip">
-                        <div id="xorGate" draggable="true">74LS02</div>
+                        <div id="xorGate" draggable="true">74LS86</div>
                     </div>
                     <div class="aboutChip">
                         <text>
@@ -183,11 +189,11 @@
                 </div>
                 <div class="Gates">
                     <div class="OriginalChip">
-                        <div id="decoder" draggable="true">74LS32</div>
+                        <div id="decoder" draggable="true">74LS138</div>
                     </div>
                     <div class="aboutChip">
                         <text>
-                            2 Input<a
+                            3 Input<a
                                 href="https://drive.google.com/drive/folders/1R6NlV-NOKEWRHP80T8OURcJ4ls1V7inK?usp=sharing"
                                 target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"
                                     style='padding-left: 22px; cursor: pointer;'></i></a><br>Decoder
@@ -196,7 +202,7 @@
                 </div>
             </div>
             <!-- <div style="width: 100%; height: 40%;"> -->
-            <button type="button" class="btn" data-toggle="collapse" id="flipFlops"
+            <!-- <button type="button" class="btn" data-toggle="collapse" id="flipFlops"
                 onclick="collapse('flipFlops', '34.7%')"><i class="fa fa-caret-down" aria-hidden="true"
                     style="padding-right: 5%;"></i>Flip Flops</button>
             <div class="flipFlops">
@@ -237,7 +243,7 @@
                         </text>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <button type="button" class="btn" data-toggle="collapse"><i class="fa fa-caret-down" aria-hidden="true"
                     style="padding-right: 5%;" id="Miscellaneous"></i>Miscellaneous</button>
         </div>
@@ -252,11 +258,11 @@
                         <div class="chip" style="margin-left: 7%; height: 100%; font-size: 0.9em;" id="place1"
                             onclick="removeChip('place1')"></div>
                         <div class="chip"
-                            style="margin-left: 7%; margin-right: 5.2%; width:9.7%; height: 100%; font-size: 0.9em;"
+                            style="margin-left: 6.7%; margin-right: 5.2%; width:9.7%; height: 100%; font-size: 0.9em;"
                             id="place2" onclick="removeChip('place2')"></div>
                         <div class="chip" style="margin-left: 6%; margin-right: 5.6%; height: 100%; font-size: 0.9em;"
                             id="place3" onclick="removeChip('place3')"></div>
-                        <div class="chip" style="margin-left: 7%; height: 100%; font-size: 0.9em;" id="place4"
+                        <div class="chip" style="margin-left: 5.5%; height: 100%; font-size: 0.9em;" id="place4"
                             onclick="removeChip('place4')"></div>
                     </div>
                     <div id="lowerHalf"></div>
