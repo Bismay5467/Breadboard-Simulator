@@ -23,7 +23,7 @@ function norGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
         }
         startCol = startCol - 5;
         while(count != 4){
-            if(arrayBody[4][startCol+1]==0 && arrayBody[4][startCol+2]==0){
+            if(arrayBody[3][startCol+1]==0 && arrayBody[3][startCol+2]==0){
                 for(let i=0;i<4;i++){
                     arrayBody[i][startCol] = 1;
                 }

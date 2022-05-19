@@ -23,7 +23,7 @@ function xorGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
         }
         startCol = startCol - 5;
         while(count != 4){
-            if((arrayBody[4][startCol]==0 && arrayBody[4][startCol+1]==0) || (arrayBody[4][startCol]==1 && arrayBody[4][startCol+1]==1)){
+            if((arrayBody[3][startCol]==0 && arrayBody[3][startCol+1]==0) || (arrayBody[3][startCol]==1 && arrayBody[3][startCol+1]==1)){
                 for(let i=0;i<4;i++){
                     arrayBody[i][startCol+2] = 0;
                 }
