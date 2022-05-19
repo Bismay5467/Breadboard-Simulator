@@ -22,7 +22,7 @@ document.getElementById('xorGate').addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
 });
 
-document.getElementById('encoder').addEventListener('dragstart', (e) => {
+document.getElementById('parallelAdder').addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
 });
 
@@ -72,7 +72,7 @@ function drop(e) {
         e.target.appendChild(nodeCopy);
         chipPlaceHolder[e.target.id] = id;
 
-        if(id == 'decoder' || id == 'adder') nodeCopy.style.width = '100%';
+        if(id == 'decoder' || id == 'parallelAdder') nodeCopy.style.width = '100%';
         else nodeCopy.style.width = '90%';
         
         nodeCopy.style.height = '100%';

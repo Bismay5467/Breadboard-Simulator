@@ -42,6 +42,15 @@
   height: 34.7%;
 }
 
+.Miscellaneous {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 50%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
 .UniversalGates {
   width: 100%;
   height: 23.7%;
@@ -84,7 +93,7 @@
 #dFlipFlop,
 #jkFlipFlop,
 #xorGate,
-#encoder,
+#parallelAdder,
 #decoder {
   height: 60%;
   width: 80%;
@@ -118,4 +127,16 @@ a, a:visited, a:active {
   width: 0;
   height: 0;
   visibility: hidden;
+}
+.led {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient(to left, #000000, #0a2f03, #070707);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.green-led, .red-led, .blue-led, .yellow-led {
+  width: 50%;
+  height: 100%;
 }
