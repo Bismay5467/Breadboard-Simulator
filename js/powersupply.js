@@ -146,6 +146,21 @@ function callChips(){
                 vccColumn = vccColumn + 16;
                 gndColumn = gndColumn + 16;
                 break;
+            case "parallelAdder" :
+                vccColumn = vccColumn + 4;
+                gndColumn = gndColumn - 2;
+                //console.log(vccColumn);
+               // console.log(gndColumn);
+                fullAdder(gndRow,gndColumn,vccRow,vccColumn);
+                vccColumn = vccColumn + 12;
+                gndColumn = gndColumn + 18;
+                break;
+            case "decoder" :
+                gndColumn = gndColumn + 1;
+                ic74138(vccRow,vccColumn,gndRow,gndColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 15;
+                break;
         }
         
     }
