@@ -34,7 +34,7 @@ function norGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             }
             else{
                 for(let i=0;i<4;i++){
-                    arrayBody[i][startCol+2] = 0;
+                    arrayBody[i][startCol] = 0;
                 }
                 startCol=startCol+3;
             }
