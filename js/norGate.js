@@ -9,7 +9,7 @@ function norGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
                 startCol=startCol+3;
                 console.log(startCol);
             }
-            else if(arrayBody[4][startCol]==null || arrayBody[4][startCol+1]==null){
+            else if(arrayBody[4][startCol+1]==null || arrayBody[4][startCol+2]==null){
                 startCol=startCol+3;
             }
             else{
@@ -29,7 +29,7 @@ function norGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
                 }
                 startCol=startCol+3;
             }
-            else if(arrayBody[3][startCol]==null || arrayBody[3][startCol+1]==null){
+            else if(arrayBody[3][startCol+1]==null || arrayBody[3][startCol+2]==null){
                 startCol=startCol+3;
             }
             else{
