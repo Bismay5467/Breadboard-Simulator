@@ -30,13 +30,13 @@ document.getElementById('decoder').addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
 });
 
-// document.getElementById('clock').addEventListener('dragstart', (e) => {
-//     e.dataTransfer.setData('text/plain', e.target.id);
-// });
+document.getElementById('decoder-demux').addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+});
 
-// document.getElementById('dFlipFlop').addEventListener('dragstart', (e) => {
-//     e.dataTransfer.setData('text/plain', e.target.id);
-// });
+document.getElementById('mux').addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+});
 
 // document.getElementById('jkFlipFlop').addEventListener('dragstart', (e) => {
 //     e.dataTransfer.setData('text/plain', e.target.id);
@@ -72,7 +72,7 @@ function drop(e) {
         e.target.appendChild(nodeCopy);
         chipPlaceHolder[e.target.id] = id;
 
-        if(id == 'decoder' || id == 'parallelAdder') nodeCopy.style.width = '100%';
+        if(id == 'decoder' || id == 'parallelAdder' || id == 'decoder-demux' || id == 'mux') nodeCopy.style.width = '100%';
         else nodeCopy.style.width = '90%';
         
         nodeCopy.style.height = '100%';
