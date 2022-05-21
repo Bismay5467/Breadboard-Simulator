@@ -36,7 +36,7 @@
   text-align: left;
 }
 .basicGates,
-.flipFlops,
+.muxNdemux,
 .complexGates {
   width: 100%;
   height: 34.7%;
@@ -89,9 +89,8 @@
 #notGate,
 #nandGate,
 #norGate,
-#clock,
-#dFlipFlop,
-#jkFlipFlop,
+#decoder-demux,
+#mux,
 #xorGate,
 #parallelAdder,
 #decoder {
@@ -111,7 +110,7 @@
 
 
 .complexGates,
-.flipFlops {
+.muxNdemux {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-in-out;
