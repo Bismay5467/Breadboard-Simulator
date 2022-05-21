@@ -155,6 +155,12 @@ function callChips(){
                 vccColumn = vccColumn + 12;
                 gndColumn = gndColumn + 18;
                 break;
+            case "decoder" :
+                gndColumn = gndColumn + 1;
+                ic74138(vccRow,vccColumn,gndRow,gndColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 15;
+                break;
         }
         
     }
