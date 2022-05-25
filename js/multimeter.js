@@ -125,29 +125,38 @@ document.getElementById('400K').addEventListener('click', () => {
 const displayMultimeterValue = (divId) => {
 
     const multimeterDisplay = document.getElementById('multimeter-display');
+    let voltageState;
+    let row = column = 0
 
     if(!powerOn || !multimeterOn) return;
 
-    row = Math.floor((divId-297)/74);
-    column = (divId-297)%74;
+    if(divId > 296) {
+        row = Math.floor((divId-297)/74);
+        column = (divId-297)%74;
 
-    if(arrayBody[row][column] == null) {
-        multimeterDisplay.innerHTML = `-0.00`;
-        return;
+        if(arrayBody[row][column] == null) {
+            multimeterDisplay.innerHTML = `-0.00`;
+            return;
+        }
     }
+
     if(workingButton == 'NONE') {
         multimeterDisplay.innerHTML = `0.00`;
         return;
     }
 
+    if((divId >= 1 && divId <= 74) || (divId >= 223 && divId <= 296)) voltageState = 1;
+    else if(divId >= 75 && divId <= 222) voltageState = 0;
+    else voltageState = arrayBody[row][column];
+
     switch(workingButton.id) {
         case '2DCV': 
-            if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])).toFixed(2)}`
-            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+1).toFixed(2)}`
+            if(voltageState == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(voltageState)*0.1).toFixed(2)}`
+            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(voltageState)*0.1+1.9).toFixed(2)}`
             break;
         case '20DCV': 
-            if(arrayBody[row][column] == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])*2).toFixed(2)}`
-            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(arrayBody[row][column])+4).toFixed(2)}`
+            if(voltageState == 0) multimeterDisplay.innerHTML = `${parseFloat(Math.random(voltageState)*0.1).toFixed(2)}`
+            else multimeterDisplay.innerHTML = `${parseFloat(Math.random(voltageState)*0.1+4.9).toFixed(2)}`
             break;
     }
 

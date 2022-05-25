@@ -63,7 +63,7 @@ svg {
 
 .chip
 {
-    border: 1px solid rgba(82, 82, 82, 0.9);
+    border: 1px solid rgba(82, 82, 82, 0.1);
     height: 100%;
     width: 9.7%;
     margin-left: 5%;
