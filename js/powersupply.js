@@ -107,7 +107,7 @@ function connectWires(){
 
 
 function callChips(){
-    let vccRow = 3, vccColumn = 4;
+    let vccRow = 0, vccColumn = 4;
     let gndRow = 4, gndColumn = 10;
     for(var place in chipPlaceHolder){
         if(chipPlaceHolder[place] == null){
@@ -158,6 +158,18 @@ function callChips(){
             case "decoder" :
                 gndColumn = gndColumn + 1;
                 ic74138(vccRow,vccColumn,gndRow,gndColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 15;
+                break;
+            case "decoder-demux" :
+                gndColumn = gndColumn + 1;
+                decoder_demux(vccRow,vccColumn,gndRow,gndColumn);
+                vccColumn = vccColumn + 16;
+                gndColumn = gndColumn + 15;
+                break;
+            case "mux" :
+                gndColumn = gndColumn + 1;
+                decoder_demux(vccRow,vccColumn,gndRow,gndColumn);
                 vccColumn = vccColumn + 16;
                 gndColumn = gndColumn + 15;
                 break;
