@@ -10,10 +10,10 @@ const E_LOWER_HALF = 888;
 window.onload = () => {
 
     for(let id = S_UPPER_POWER_SUPPLY; id <= E_UPPER_POWER_SUPPLY; id++)
-        document.getElementById('upperPowerSupply').innerHTML += `<div id = "${id}" class = "holes" style = "background: black"></div>`;
+        document.getElementById('upperPowerSupply').innerHTML += `<div id = "${id}" class = "holes" style = "background: black" onmouseover = "displayMultimeterValue(${id})"></div>`;
 
     for(let id = S_LOWER_POWER_SUPPLY; id <= E_LOWER_POWER_SUPPLY; id++)
-        document.getElementById('lowerPowerSupply').innerHTML += `<div id = "${id}" class = "holes" style = "background: black "></div>`;
+        document.getElementById('lowerPowerSupply').innerHTML += `<div id = "${id}" class = "holes" style = "background: black " onmouseover = "displayMultimeterValue(${id})"></div>`;
     
     for(let id = S_UPPER_HALF; id <= E_UPPER_HALF; id++)
         document.getElementById('upperHalf').innerHTML += `<div id = "${id}" class = "holes" style = "background: black" 

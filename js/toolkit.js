@@ -16,7 +16,6 @@ const collapse = (className, maxHeight) => {
             document.getElementById(openDivClassName).childNodes[0].classList.toggle('fa-caret-up');
             document.getElementsByClassName(openDivClassName)[0].style.maxHeight = null;
         }
-
         element.style.maxHeight = maxHeight;
         openDivClassName = className;
     }
