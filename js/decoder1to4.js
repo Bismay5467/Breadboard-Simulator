@@ -27,4 +27,5 @@ function decoder_demux(vccRow,vccColumn,gndRow,gndColumn){
         logicImplement2(gndRow,vccColumn);
         logicImplement2(vccRow,vccColumn+1);
     }
+    else flag = true;
 }
