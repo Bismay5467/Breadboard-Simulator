@@ -33,4 +33,5 @@ function multiplexer(vccRow,vccColumn,gndRow,gndColumn){
         logicImplement3(gndRow,vccColumn);
         logicImplement3(vccRow,vccColumn+1);
     }
+    else flag = true;
 }
