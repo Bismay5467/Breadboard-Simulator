@@ -81,39 +81,39 @@ document.getElementById('10DCA').addEventListener('click', () => {
     workingButtonInterface(button);
 });
 
+document.getElementById('330 Ω').addEventListener('click', () => {
+
+    const button = document.getElementById('330 Ω');
+    
+    if(!multimeterOn)
+        return;
+
+    workingButtonInterface(button);
+});
+
+document.getElementById('800 Ω').addEventListener('click', () => {
+
+    const button = document.getElementById('800 Ω');
+    
+    if(!multimeterOn)
+        return;
+
+    workingButtonInterface(button);
+});
+
+document.getElementById('1K').addEventListener('click', () => {
+
+    const button = document.getElementById('1K');
+    
+    if(!multimeterOn)
+        return;
+
+    workingButtonInterface(button);
+});
+
 document.getElementById('10K').addEventListener('click', () => {
 
     const button = document.getElementById('10K');
-    
-    if(!multimeterOn)
-        return;
-
-    workingButtonInterface(button);
-});
-
-document.getElementById('20K').addEventListener('click', () => {
-
-    const button = document.getElementById('20K');
-    
-    if(!multimeterOn)
-        return;
-
-    workingButtonInterface(button);
-});
-
-document.getElementById('200K').addEventListener('click', () => {
-
-    const button = document.getElementById('200K');
-    
-    if(!multimeterOn)
-        return;
-
-    workingButtonInterface(button);
-});
-
-document.getElementById('400K').addEventListener('click', () => {
-
-    const button = document.getElementById('400K');
     
     if(!multimeterOn)
         return;

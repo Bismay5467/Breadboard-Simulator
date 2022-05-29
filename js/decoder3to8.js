@@ -47,4 +47,5 @@ function ic74138(vccRow,vccColumn,gndRow,gndColumn){
             }
         }
     }
+    else flag = true;
 }

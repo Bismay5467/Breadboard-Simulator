@@ -1,3 +1,5 @@
+let flag = false;
+
 function andGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
     if(arrayBody[vccRow][vccColumn] == 1 && arrayBody[gndRow][gndColumn] == 0){
         let count = 0;
@@ -42,6 +44,7 @@ function andGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             count++;
         }
     }
+    else flag = true;
 }
 // function andGateLogic(place){
 //     let vccid,gndid;

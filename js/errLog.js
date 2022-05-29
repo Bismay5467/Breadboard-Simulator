@@ -2,7 +2,7 @@ const ERROR_MESSAGE = [
     'Output pins cannot acccept inputs.',
     'The starting and ending terminal of the wire cannot be at the power supply at the same time.',
     'Simulation failed. Try turning on the power button first.',
-    'The Vcc and Gnd of the chips are not connected properly'
+    'The Vcc and Gnd of the chips are not connected properly.'
 ];
 
 document.getElementsByClassName('tabButton')[0].addEventListener('click', () => {

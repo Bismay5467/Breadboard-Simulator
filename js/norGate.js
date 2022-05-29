@@ -40,7 +40,8 @@ function norGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             }
             count++;
         }
-    }
+    } 
+    else flag = true;
 }
 // function xorGateLogic(place){
 //     let vccid,gndid;

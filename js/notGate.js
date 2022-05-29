@@ -41,6 +41,7 @@ function notGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             count++;
         }
     }
+    else flag = true;
 }
 // function notGateLogic(place){
 //     let vccid,gndid;

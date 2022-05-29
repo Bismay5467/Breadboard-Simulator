@@ -176,9 +176,19 @@ function powersupply(){
     for(let i = 0; i < 100; i++) 
     {
         callChips();
+        if(isSimulating && flag) {
+            errorMessage(ERROR_MESSAGE[3]);
+            flag = false;
+            break;
+        }
         connectWires();
 
         callChips();
+        if(isSimulating && flag) {
+            errorMessage(ERROR_MESSAGE[3]);
+            flag = false;
+            break;
+        }
         connectWires();  
     }
 //    connectWires_soja();

@@ -1,4 +1,5 @@
 let powerOn = false;
+let isSimulating = false;
 
 const powerButtons = document.getElementsByClassName('power-button')[0].querySelectorAll('button');
 
@@ -20,6 +21,7 @@ document.getElementById('power').addEventListener('click', () => {
     }
     else {
         powerOn = false;
+        isSimulating = false;
         for (let i = 0; i < div.length; i++) {
             div[i].style.color = 'rgb(39, 38, 38)';
         }
@@ -34,6 +36,7 @@ document.getElementById('simulate').addEventListener('click', () => {
         return;
     }
     else {
+        isSimulating = true;
         powersupply();
     }
 });

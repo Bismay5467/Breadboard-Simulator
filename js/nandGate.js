@@ -41,6 +41,7 @@ function nandGate(vccRow,vccColumn,gndRow,gndColumn,startCol){
             count++;
         }
     }
+    else flag = true;
 }
 // function nandGateLogic(place){
 //     let vccid,gndid;

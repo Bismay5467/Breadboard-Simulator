@@ -114,4 +114,5 @@ function fullAdder(vccRow,vccColumn,gndRow,gndColumn){
             }
         }
     }
+    else flag = true;
 }
