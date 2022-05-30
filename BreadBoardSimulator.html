@@ -257,7 +257,7 @@
                     style="padding-right: 5%;"></i>Miscellaneous</button>
             <div class="Miscellaneous">
                 <div class="led">
-                    <div class="red-led" draggable="true">
+                    <div class="red-led" draggable="true" id="red-led">
                         <div style = "width: 25px; height: 60px; position : relative; left: 50%; top: 50%; transform: translate(-50%, -50%); ">
                             <div style = "width: 72%; height: 51%; border: 1px transparent; border-bottom: 0px; border-radius: 2em 2em 0 0; background-color: red; box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5) inset;"></div>
                             <div style = "width: 75.5%; height: 12%; background-color: red; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) inset;"></div>
@@ -265,7 +265,7 @@
                             <div style = "width: 0.001%; height: 60%; border: 0.01em solid #ccc; margin-left: 40%; display: inline"></div>
                         </div>
                     </div>
-                    <div class="green-led" draggable="true">
+                    <div class="green-led" draggable="true" id="green-led">
                         <div style = "width: 25px; height: 60px; position : relative; left: 50%; top: 50%; transform: translate(-50%, -50%);">
                             <div style = "width: 72%; height: 51%; border: 1px transparent; border-bottom: 0px; border-radius: 2em 2em 0 0; background-color: rgb(6, 232, 6); box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5) inset;"></div>
                             <div style = "width: 75.5%; height: 12%; background-color: rgb(3, 215, 3); box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) inset;"></div>
@@ -273,7 +273,7 @@
                             <div style = "width: 0.001%; height: 60%; border: 0.01em solid #ccc; margin-left: 40%; display: inline"></div>
                         </div>
                     </div>
-                    <div class="yellow-led" draggable="true">
+                    <div class="yellow-led" draggable="true" id="yellow-led">
                         <div style = "width: 25px; height: 60px; position : relative; left: 50%; top: 50%; transform: translate(-50%, -50%);">
                             <div style = "width: 72%; height: 51%; border: 1px transparent; border-bottom: 0px; border-radius: 2em 2em 0 0; background-color: yellow; box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5) inset;"></div>
                             <div style = "width: 75.5%; height: 12%; background-color: yellow; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) inset;"></div>
@@ -281,7 +281,7 @@
                             <div style = "width: 0.001%; height: 60%; border: 0.01em solid #ccc; margin-left: 40%; display: inline"></div>
                         </div> 
                     </div>
-                    <div class="blue-led" draggable="true">
+                    <div class="blue-led" draggable="true" id="blue-led">
                         <div style = "width: 25px; height: 60px; position : relative; left: 50%; top: 50%; transform: translate(-50%, -50%);">
                             <div style = "width: 72%; height: 51%; border: 1px transparent; border-bottom: 0px; border-radius: 2em 2em 0 0; background-color: rgb(163, 163, 238); box-shadow: 2px 2px 12px rgba(59, 23, 216, 0.5) inset;"></div>
                             <div style = "width: 75.5%; height: 12%; background-color: rgb(115, 115, 247); box-shadow: 2px 2px 8px rgba(101, 74, 221, 0.3) inset;"></div>
@@ -300,16 +300,16 @@
                 <div id="upperPowerSupply" style="border-bottom: 2px solid red;"></div>
                 <div id="body">
                     <div class="box"
-                        style="border: 1px solid rgba(250, 252, 250, 0.1); width: 8%; height: 52%; position: absolute; left: 18.5%; z-index: -500">
+                        style="border: 1px solid rgba(20, 21, 20, 0.9); width: 8%; height: 52%; position: absolute; left: 18.5%; z-index: -500">
                     </div>
                     <div class="box"
-                        style="border: 1px solid rgba(250, 252, 250, 0.1); width: 8%; height: 52%; position: absolute; left: 39.75%;z-index: -500">
+                        style="border: 1px solid rgba(16, 17, 16, 0.9); width: 8%; height: 52%; position: absolute; left: 39.75%;z-index: -500">
                     </div>
                     <div class="box"
-                        style="border: 1px solid rgba(250, 252, 250, 0.1); width: 8%; height: 52%; position: absolute; left: 60.75%;z-index: -500">
+                        style="border: 1px solid rgba(27, 28, 27, 0.9); width: 8%; height: 52%; position: absolute; left: 60.75%;z-index: -500">
                     </div>
                     <div class="box"
-                        style="border: 1px solid rgba(250, 252, 250, 0.1); width: 8%; height: 52%; position: absolute; left: 82.75%;z-index: -500">
+                        style="border: 1px solid rgba(16, 17, 16, 0.9); width: 8%; height: 52%; position: absolute; left: 82.75%;z-index: -500">
                     </div>
                     <div id="upperHalf"></div>
                     <div id="chipBox">
@@ -415,6 +415,7 @@
 <script type="text/javascript" src="js/decoder1to4.js"></script>
 <script type="text/javascript" src="js/saveFile.js"></script>
 <script type="text/javascript" src="js/openFile.js"></script>
+<script type="text/javascript" src="js/led.js"></script>
 <script type="text/javascript" src="js/powerSupply-temp.js"></script>
 <script type="text/javascript" src="js/downloadFile.js"></script>
 
