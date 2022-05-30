@@ -1,14 +1,9 @@
 const saveFile = () => {
-  const data = JSON.stringify(wireConnection);
-
-  const downloadFile = document.createElement("a");
-  let blob = new Blob([data], { type: "application/json" });
-  let url = window.URL.createObjectURL(blob);
-  downloadFile.href = url;
-  downloadFile.download = "Breadboard.json";
-
-  downloadFile.click();
-  downloadFile.remove();
-
-  console.log("some commit");
+  const data = JSON.stringify({ wireConnection, chipPlaceHolder, wireCount });
+  localStorage.setItem("breadboard", data);
+  window.open(
+    "http://127.0.0.1:5500/BreadBoardSimulator.html?download=true",
+    "Download",
+    "width=500,height=500"
+  );
 };
