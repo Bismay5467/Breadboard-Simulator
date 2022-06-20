@@ -20,3 +20,22 @@
   letter-spacing: 1.2px;
   font-family: "IBM Plex Sans", sans-serif;
 }
+
+.timingDiagram a {
+  width: 100%;
+  height: 0;
+  color: #0acb0e;
+  font-size: 18px;
+  padding: 1%;
+  margin: 0;
+  overflow: auto;
+  word-spacing: 2px;
+  letter-spacing: 1.2px;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-decoration: none;
+  user-select: none;
+}
+
+.timingDiagram a:hover {
+  color:rgba(55, 237, 23, 0.5)
+}

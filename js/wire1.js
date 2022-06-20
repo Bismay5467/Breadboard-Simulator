@@ -91,18 +91,9 @@ const stopDrawing = (divId) => {
     drawingState = "IDLE";
     wireCount++;
 
-    if((wireStartTerminal+1 >= negativePowerSupply[0][0] && wireStartTerminal+1 <= negativePowerSupply[0][1]) || (wireStartTerminal+1 >= negativePowerSupply[1][0] && wireStartTerminal+1 <= negativePowerSupply[1][1]))
+    if(wireStartTerminal+1 >= S_UPPER_POWER_SUPPLY && wireStartTerminal+1 <= E_LOWER_POWER_SUPPLY)
     {
-        if((divId >= positivePowerSupply[0][0] && divId <= positivePowerSupply[0][1]) || (divId >= positivePowerSupply[1][0] && divId <= positivePowerSupply[1][1]))
-        {
-            removeConnection(wireStartTerminal+1);
-            errorMessage(ERROR_MESSAGE[1]); 
-        }
-    }
-
-    if((wireStartTerminal+1 >= positivePowerSupply[0][0] && wireStartTerminal+1 <= positivePowerSupply[0][1]) || (wireStartTerminal+1 >= positivePowerSupply[1][0] && wireStartTerminal+1 <= positivePowerSupply[1][1]))
-    {
-        if((divId >= negativePowerSupply[0][0] && divId <= negativePowerSupply[0][1]) || (divId >= negativePowerSupply[1][0] && divId <= negativePowerSupply[1][1]))
+        if(divId >= S_UPPER_POWER_SUPPLY && divId <= E_LOWER_POWER_SUPPLY)
         {
             removeConnection(wireStartTerminal+1);
             errorMessage(ERROR_MESSAGE[1]); 
