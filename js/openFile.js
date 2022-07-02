@@ -30,7 +30,8 @@ const readFile = (data) => {
     if (!id) continue;
     const nodeCopy = document.getElementById(id).cloneNode(true);
     document.getElementById(e).appendChild(nodeCopy);
-    nodeCopy.style.width = "100%";
+    if(id == 'decoder' || id == 'parallelAdder' || id == 'decoder-demux' || id == 'mux') nodeCopy.style.width = '100%';
+    else nodeCopy.style.width = '90%';
 
     nodeCopy.style.height = "100%";
     nodeCopy.style.borderRadius = "0.3em";
@@ -65,10 +66,10 @@ const readFile = (data) => {
       newWire.style.strokeWidth = "4";
 
       /*creating the path for the wire*/
-      d = `M ${x - offset_X + 2} ${y - offset_Y + 5}
+      d = `M ${x - offset_X + 2} ${y - offset_Y + 3}
             Q ${(x - offset_X + endX - offset_X) / 2} ${y - offset_Y - 15} ${
         endX - offset_X + 2
-      } ${endY - offset_Y + 5}`;
+      } ${endY - offset_Y + 3}`;
 
       newWire.setAttribute("d", d);
       newWire.setAttribute("id", `line-${wireConnection[i][0]}`);

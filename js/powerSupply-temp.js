@@ -17,7 +17,7 @@ document.getElementById('power').addEventListener('click', () => {
             div[i].style.color = 'rgb(194, 12, 12)';
         }
         div[0].innerHTML = `5.00`;
-        div[2].innerHTML = `30.00`;
+        div[2].innerHTML = `2.00`;
     }
     else {
         powerOn = false;

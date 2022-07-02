@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IcOnBREAD</title>
     <link rel="stylesheet" href="css/breadboard.css">
     <link rel="stylesheet" href="css/chip.css">
     <link rel="stylesheet" href="css/errorLog.css">
@@ -70,18 +70,18 @@
         </button>
         <div class="about">
             <i class="bi bi-question-circle-fill" style="font-size: 1.5em;"><text
-                    style="padding-left: 1%; font-style: normal;padding-right: 61%;">Breadboard Simulator</text></i>
+                    style="padding-left: 1%; font-style: normal;padding-right: 76.34%;">IcOnBREAD</text></i>
             <i class="bi bi-x-circle-fill" style="font-size: 1.5em; text-align: right; cursor: pointer;"
                 onclick="closeAboutSection()"></i>
             <br><br>
             <text style="font-weight: bold;">
-                Breadboard Simulator is a virtual breadboard software developed for our semester project. It has an
+                IcOnBREAD is a virtual breadboard software developed for our semester project. It has an
                 intuitive user interface that simulates a virtual breadboard and supports a wide range of components
                 commonly used in college-level electronics, including:
                 <br><br>
                 Passives: Resistors (with correct colour bands)
                 <br>
-                Digital ICs: Basic logic Gates, Universal logic gates, Display Decoders and Parallel Adder
+                Digital ICs: Basic Gates, Universal gates, Display Decoders, Mux/Demux and Parallel Adder
                 <br>
                 Outputs: LEDs, 7-segment Displays
                 <br><br>
@@ -331,18 +331,28 @@
             <div class="tabContainer">
                 <div class="tab">
                     <button type="button" class="tabButton">Error Log</button>
-                    <button type="button" class="tabButton">Some useful circuits</button>
+                    <button type="button" class="tabButton">Some Useful Circuits</button>
                 </div>
                 <div class="errorLog">
 
                 </div>
                 <div class="timingDiagram">
-                    <center>
-                    <a href="https://drive.google.com/file/d/1uadlyRo7ekbUSHc3jSHKDCw4Yi7yY8bN/view?usp=sharing" target="_blank">blahblah</a><br><br>
-                    <a href="https://drive.google.com/file/d/1uadlyRo7ekbUSHc3jSHKDCw4Yi7yY8bN/view?usp=sharing">blahblah</a><br><br>
-                    <a href="https://drive.google.com/file/d/1uadlyRo7ekbUSHc3jSHKDCw4Yi7yY8bN/view?usp=sharing">blahblah</a><br><br>
-                    <a href="https://drive.google.com/file/d/1uadlyRo7ekbUSHc3jSHKDCw4Yi7yY8bN/view?usp=sharing">blahblah</a>
-                    </center>
+                    <div id="container">
+                        <div id = "name">
+                            <div class = "import" style = "margin-top: 3%;"><text>Import Full Adder Using Nand Gates</text><i class="bi bi-download"></i></div>
+                            <div class = "import"><text>Import Full Adder Using Nor Gates</text><i class="bi bi-download"></i></div>
+                            <div class = "import"><text>Import Xor Using Nand Gates</text><i class="bi bi-download"></i></div>
+                            <div class = "import"><text>Import Xor Using Nor Gates</text><i class="bi bi-download"></i></div>
+                            <div class = "import"><text>Import 4*1 Mux Using Basic Gates</text><i class="bi bi-download"></i></div>
+                        </div>
+                        <div id = "circuitDiagram">
+                            <div class = "import" style = "margin-top: 3%;"><text>View Circuit Diagram</text><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                            <div class = "import"><text>View Circuit Diagram</text><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                            <div class = "import"><text>View Circuit Diagram</text><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                            <div class = "import"><text>View Circuit Diagram</text><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                            <div class = "import"><text>View Circuit Diagram</text><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -353,7 +363,7 @@
                     <div class="powerSupply-display-inner">
                         <div class="voltage-value">0.00</div>
                         <div class="voltage-unit">V</div>
-                        <div class="current-value">00.00</div>
+                        <div class="current-value">0.00</div>
                         <div class="current-unit">A</div>
                     </div>
                 </div>

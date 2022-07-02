@@ -55,13 +55,14 @@
 .about {
   border: 1px solid transparent;
   border-radius: 0.5em;
-  width: 60.5%;
+  width: 59%;
   height: 990%;
   background: rgba(20, 40, 20, 0.9);
   margin: 0 auto;
   z-index: 9999;
   padding-left: 2.5%;
   padding-top: 1%;
+  padding-right: 1.5%;
   display: none;
 
 

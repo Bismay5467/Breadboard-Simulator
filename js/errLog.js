@@ -36,6 +36,13 @@ function errorMessage(errorMessage) {
     var errorContainer = document.getElementsByClassName('errorLog')[0];
     var newP = document.createElement('p');
     newP.innerHTML = errorMessage;
+    if(errorContainer.style.display == 'none') {
+        errorContainer.style.display = 'block';
+        document.getElementsByClassName('timingDiagram')[0].style.display = 'none';
+
+        document.getElementsByClassName('tabButton')[1].style.cssText = 'border-bottom: none;'
+        document.getElementsByClassName('tabButton')[0].style.cssText = 'border-bottom: 1px solid rgba(255, 0, 0, 0.7);';
+    }
     errorContainer.insertBefore(newP, errorContainer.firstChild)
     setTimeout(() =>{
         newP.className += 'show';
