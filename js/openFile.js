@@ -30,8 +30,14 @@ const readFile = (data) => {
     if (!id) continue;
     const nodeCopy = document.getElementById(id).cloneNode(true);
     document.getElementById(e).appendChild(nodeCopy);
-    if(id == 'decoder' || id == 'parallelAdder' || id == 'decoder-demux' || id == 'mux') nodeCopy.style.width = '100%';
-    else nodeCopy.style.width = '90%';
+    if (
+      id == "decoder" ||
+      id == "parallelAdder" ||
+      id == "decoder-demux" ||
+      id == "mux"
+    )
+      nodeCopy.style.width = "100%";
+    else nodeCopy.style.width = "90%";
 
     nodeCopy.style.height = "100%";
     nodeCopy.style.borderRadius = "0.3em";
@@ -95,4 +101,12 @@ setTimeout(() => {
 
 const openFile = () => {
   inputFile.click();
+};
+
+const loadCircuit = async (e) => {
+  const url = e.getAttribute("data-url");
+  const json = await fetch(url);
+
+  const data = await json.json();
+  readFile(data);
 };
